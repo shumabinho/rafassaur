@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Link Generator</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+}
+form {
+margin-bottom: 20px;
+}
+label, input, button {
+display: block;
+margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<h1>WhatsApp Link Generator</h1>
+<form id="whatsappForm">
+<label for="phoneNumber">Enter WhatsApp Phone Number:</label>
+<input type="text" id="phoneNumber" name="phoneNumber" placeholder="e.g., 1234567890" required>
+
+<label for="message">Enter Your Message:</label>
+<input type="text" id="message" name="message" placeholder="Type your message here" required>
+
+<button type="submit">Generate Link</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+document.getElementById('whatsappForm').addEventListener('submit', function(event) {
+event.preventDefault();
+
+const phoneNumber = document.getElementById('phoneNumber').value;
+const message = document.getElementById('message').value;
+const encodedMessage = encodeURIComponent(message);
+
+const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+document.getElementById('result').innerHTML = `
+<p>Click the link below to open WhatsApp:</p>
+<a href="${whatsappLink}" target="_blank">${whatsappLink}</a>
+`;
+});
+</script>
+</body>
+</html>
