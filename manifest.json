@@ -1,0 +1,19 @@
+{
+"name": "WhatsApp Link Generator",
+"description": "A simple web app to generate WhatsApp message links.",
+"version": "1.0.0",
+"author": "Your Name",
+"icons": {
+"48": "https://yourdomain.com/icons/icon-48.png",
+"128": "https://yourdomain.com/icons/icon-128.png"
+},
+"app": {
+"url": "https://yourdomain.com/whatsapp-link-generator",
+"width": 800,
+"height": 600
+},
+"permissions": [
+"canva:read",
+"canva:write"
+]
+}
